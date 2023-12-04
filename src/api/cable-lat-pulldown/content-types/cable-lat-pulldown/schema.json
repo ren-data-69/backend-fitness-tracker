@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cable_lat_pulldowns",
+  "info": {
+    "singularName": "cable-lat-pulldown",
+    "pluralName": "cable-lat-pulldowns",
+    "displayName": "Cable Lat Pulldown"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "weight": {
+      "type": "decimal",
+      "required": true
+    },
+    "reps": {
+      "type": "integer",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "cable_lat_pulldown"
+    }
+  }
+}

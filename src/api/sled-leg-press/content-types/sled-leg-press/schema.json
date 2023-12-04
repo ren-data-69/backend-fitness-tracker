@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sled_leg_presses",
+  "info": {
+    "singularName": "sled-leg-press",
+    "pluralName": "sled-leg-presses",
+    "displayName": "Sled Leg Press"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "weight": {
+      "type": "decimal",
+      "required": true
+    },
+    "reps": {
+      "type": "integer",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "sled_leg_press"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "barbell_deadlifts",
+  "info": {
+    "singularName": "barbell-deadlift",
+    "pluralName": "barbell-deadlifts",
+    "displayName": "Barbell Deadlift"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "weight": {
+      "type": "decimal",
+      "required": true
+    },
+    "reps": {
+      "type": "integer",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "barbell_deadlift"
+    }
+  }
+}

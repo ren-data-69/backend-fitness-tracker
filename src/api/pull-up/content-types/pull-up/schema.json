@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pull_ups",
+  "info": {
+    "singularName": "pull-up",
+    "pluralName": "pull-ups",
+    "displayName": "Pull Up"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "weight": {
+      "type": "decimal",
+      "required": true
+    },
+    "reps": {
+      "type": "integer",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "pull_up"
+    }
+  }
+}

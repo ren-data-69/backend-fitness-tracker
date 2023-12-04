@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "body_weights",
+  "info": {
+    "singularName": "body-weight",
+    "pluralName": "body-weights",
+    "displayName": "Body weight"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "weight": {
+      "type": "decimal",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "body_weights"
+    }
+  }
+}

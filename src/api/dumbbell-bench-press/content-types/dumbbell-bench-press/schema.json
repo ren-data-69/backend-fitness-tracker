@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dumbbell_bench_presses",
+  "info": {
+    "singularName": "dumbbell-bench-press",
+    "pluralName": "dumbbell-bench-presses",
+    "displayName": "Dumbbell Bench Press",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "weight": {
+      "type": "decimal",
+      "required": true
+    },
+    "reps": {
+      "type": "integer",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "dumbbell_bench_press"
+    }
+  }
+}

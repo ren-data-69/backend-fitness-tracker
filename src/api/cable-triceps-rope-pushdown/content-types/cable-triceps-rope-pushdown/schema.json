@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cable_triceps_rope_pushdowns",
+  "info": {
+    "singularName": "cable-triceps-rope-pushdown",
+    "pluralName": "cable-triceps-rope-pushdowns",
+    "displayName": "Cable Triceps Rope Pushdown"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "weight": {
+      "type": "decimal",
+      "required": true
+    },
+    "reps": {
+      "type": "integer",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "cable_triceps_rope_pushdown"
+    }
+  }
+}

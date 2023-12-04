@@ -1,0 +1,206 @@
+{
+  "kind": "collectionType",
+  "collectionName": "up_users",
+  "info": {
+    "name": "user",
+    "description": "",
+    "singularName": "user",
+    "pluralName": "users",
+    "displayName": "User"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "username": {
+      "type": "string",
+      "minLength": 3,
+      "unique": true,
+      "configurable": false,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "minLength": 6,
+      "configurable": false,
+      "required": true
+    },
+    "provider": {
+      "type": "string",
+      "configurable": false
+    },
+    "password": {
+      "type": "password",
+      "minLength": 6,
+      "configurable": false,
+      "private": true,
+      "searchable": false
+    },
+    "resetPasswordToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true,
+      "searchable": false
+    },
+    "confirmationToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true,
+      "searchable": false
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "role": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.role",
+      "inversedBy": "users",
+      "configurable": false
+    },
+    "body_weights": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::body-weight.body-weight",
+      "mappedBy": "user"
+    },
+    "goal_body_weight": {
+      "type": "decimal"
+    },
+    "barbell_bench_press": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::barbell-bench-press.barbell-bench-press",
+      "mappedBy": "user"
+    },
+    "goal_barbell_bench_press": {
+      "type": "decimal"
+    },
+    "dumbbell_bench_press": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dumbbell-bench-press.dumbbell-bench-press",
+      "mappedBy": "user"
+    },
+    "goal_dumbbell_bench_press": {
+      "type": "decimal"
+    },
+    "barbell_squat": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::barbell-squat.barbell-squat",
+      "mappedBy": "user"
+    },
+    "goal_barbell_squat": {
+      "type": "decimal"
+    },
+    "goal_incline_dumbbell_bench_press": {
+      "type": "decimal"
+    },
+    "incline_dumbbell_bench_press": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::incline-dumbbell-bench-press.incline-dumbbell-bench-press",
+      "mappedBy": "user"
+    },
+    "seated_dumbbell_shoulder_press": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::seated-dumbbell-shoulder-press.seated-dumbbell-shoulder-press",
+      "mappedBy": "user"
+    },
+    "goal_seated_dumbbell_shoulder_press": {
+      "type": "decimal"
+    },
+    "dumbbell_lateral_raise": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dumbbell-lateral-raise.dumbbell-lateral-raise",
+      "mappedBy": "user"
+    },
+    "goal_dumbbell_lateral_raise": {
+      "type": "decimal"
+    },
+    "cable_lat_pulldown": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cable-lat-pulldown.cable-lat-pulldown",
+      "mappedBy": "user"
+    },
+    "goal_cable_lat_pulldown": {
+      "type": "decimal"
+    },
+    "barbell_deadlift": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::barbell-deadlift.barbell-deadlift",
+      "mappedBy": "user"
+    },
+    "goal_barbell_deadlift": {
+      "type": "decimal"
+    },
+    "barbell_bent_over_row": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::barbell-bent-over-row.barbell-bent-over-row",
+      "mappedBy": "user"
+    },
+    "goal_barbell_bent_over_row": {
+      "type": "decimal"
+    },
+    "dumbbell_biceps_curl": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dumbbell-biceps-curl.dumbbell-biceps-curl",
+      "mappedBy": "user"
+    },
+    "goal_dumbbell_biceps_curl": {
+      "type": "decimal"
+    },
+    "cable_triceps_rope_pushdown": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cable-triceps-rope-pushdown.cable-triceps-rope-pushdown",
+      "mappedBy": "user"
+    },
+    "goal_cable_triceps_rope_pushdown": {
+      "type": "decimal"
+    },
+    "sled_leg_press": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sled-leg-press.sled-leg-press",
+      "mappedBy": "user"
+    },
+    "goal_sled_leg_press": {
+      "type": "decimal",
+      "required": false
+    },
+    "push_up": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::push-up.push-up",
+      "mappedBy": "user"
+    },
+    "goal_push_up": {
+      "type": "decimal"
+    },
+    "pull_up": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pull-up.pull-up",
+      "mappedBy": "user"
+    },
+    "goal_pull_up": {
+      "type": "decimal",
+      "required": false
+    }
+  }
+}

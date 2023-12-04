@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "workout_lists",
+  "info": {
+    "singularName": "workout-list",
+    "pluralName": "workout-lists",
+    "displayName": "Workout List",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "workoutName": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "workoutName",
+      "required": true
+    },
+    "num": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    }
+  }
+}

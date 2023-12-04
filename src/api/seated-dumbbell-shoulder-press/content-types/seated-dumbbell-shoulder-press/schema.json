@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "seated_dumbbell_shoulder_presses",
+  "info": {
+    "singularName": "seated-dumbbell-shoulder-press",
+    "pluralName": "seated-dumbbell-shoulder-presses",
+    "displayName": "Seated Dumbbell Shoulder Press"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "weight": {
+      "type": "decimal",
+      "required": true
+    },
+    "reps": {
+      "type": "integer",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "seated_dumbbell_shoulder_press"
+    }
+  }
+}

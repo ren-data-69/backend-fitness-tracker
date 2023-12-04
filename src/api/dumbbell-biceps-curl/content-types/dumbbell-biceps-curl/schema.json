@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dumbbell_biceps_curls",
+  "info": {
+    "singularName": "dumbbell-biceps-curl",
+    "pluralName": "dumbbell-biceps-curls",
+    "displayName": "Dumbbell Biceps Curl"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "weight": {
+      "type": "decimal",
+      "required": true
+    },
+    "reps": {
+      "type": "integer",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "dumbbell_biceps_curl"
+    }
+  }
+}

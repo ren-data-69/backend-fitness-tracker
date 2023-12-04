@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "push_ups",
+  "info": {
+    "singularName": "push-up",
+    "pluralName": "push-ups",
+    "displayName": "Push Up"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "weight": {
+      "type": "decimal",
+      "required": true
+    },
+    "reps": {
+      "type": "integer",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "push_up"
+    }
+  }
+}
