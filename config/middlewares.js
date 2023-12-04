@@ -1,18 +1,19 @@
 module.exports = [
   "strapi::errors",
   "strapi::security",
-  "strapi::poweredBy",
   {
     name: "strapi::cors",
     config: {
-      enabled: true,
-      headers: "*",
       origin: [
-        "http://localhost:1337",
+        "http://localhost:3000",
         "https://fitness-tracker-sujal.vercel.app",
-      ],
+      ], // Add your allowed origins
+      credentials: true, // Allow credentials (optional)
+      methods: ["GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"], // Specify allowed methods
+      headers: ["Content-Type", "Authorization"], // Specify allowed headers
     },
   },
+  "strapi::poweredBy",
   "strapi::logger",
   "strapi::query",
   "strapi::body",
